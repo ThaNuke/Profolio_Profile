@@ -1,16 +1,23 @@
 import React from "react";
 import mypic from '../imgs/2.jpg';
 import { IoBookmark } from "react-icons/io5";
-import { FaDog,FaList } from "react-icons/fa";
+import { FaDog, FaList } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; 
 
-const Animalover = () => {
+function Header() {
+  const navigate = useNavigate(); 
+
+  // ฟังก์ชันสำหรับการนำทางไปยังหน้าที่ต้องการ
+  const handleNavigation = (path) => {
+    window.location.href = path;
+  };
+
   return (
     <div className="bg-[#EBE4F2] min-h-screen flex flex-col">
-      
       <header className="bg-[#6373B7] py-4 text-white">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center">
-            <h1 className=" ml-4 text-2xl font-bold">Animalover</h1>
+            <h1 className="ml-4 text-2xl font-bold">Animalover</h1>
             <FaDog className="mx-2 size-6"/>
           </div>
           <nav className="flex space-x-6">
@@ -23,7 +30,6 @@ const Animalover = () => {
       </header>
 
       <main className="container mx-auto py-12 px-4 md:px-0">
-        
         <div className="bg-[#6373B7] p-9 rounded-lg shadow-md flex items-center gap-4">
           <img src={mypic} alt="Welcome" className="w-32 h-32 rounded-full object-cover" />
           <div>
@@ -42,11 +48,19 @@ const Animalover = () => {
             <IoBookmark className="ml-2 text-2xl" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 cursor-pointer">
-            <div className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105">
+            {/* คลิกที่ div นี้แล้วจะไปหน้า '/mypet' */}
+            <div
+              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
+              onClick={() => handleNavigation("/mypet")} // ต้องเป็น "/mypet"
+            >
               <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
               <h4 className="font-semibold mb-4">สัตว์เลี้ยงของฉัน</h4>
             </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105">
+            {/* คลิกที่ div นี้แล้วจะไปหน้า '/add-pet' */}
+            <div
+              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
+              onClick={() => handleNavigation("/Addpet")}
+            >
               <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
               <h4 className="font-semibold mb-4">เพิ่มสัตว์เลี้ยง</h4>
             </div>
@@ -59,28 +73,39 @@ const Animalover = () => {
             <FaList className="ml-2 size-5"/>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105">
+            <div
+              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
+              
+            >
               <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
               <h4 className="font-semibold mb-3 text-center">สัตว์เลี้ยงของฉัน</h4>
             </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105">
+            <div
+              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
+              
+            >
               <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
               <h4 className="font-semibold mb-3 text-center">เพิ่มสัตว์เลี้ยง</h4>
             </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105">
+            <div
+              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
+              
+            >
               <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
               <h4 className="font-semibold text-center">ข้อมูลสุขภาพของสัตว์เลี้ยง</h4>
             </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105">
+            <div
+              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
+              
+            >
               <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
               <h4 className="font-semibold text-center">คลินิกรักษาสัตว์ใกล้เคียง</h4>
             </div>
           </div>
         </div>
-
       </main>
     </div>
   );
-};
+}
 
-export default Animalover;
+export default Header;
