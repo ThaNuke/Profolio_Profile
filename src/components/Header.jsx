@@ -1,105 +1,93 @@
 import React from "react";
-import mypic from '../imgs/2.jpg';
-import { IoBookmark } from "react-icons/io5";
-import { FaDog, FaList } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; 
+import { Link } from "react-scroll";
+import mypic1 from "../imgs/7.jpg";
+import mypic2 from "../imgs/6.jpg";
 
 function Header() {
-  const navigate = useNavigate(); 
-
-  // ฟังก์ชันสำหรับการนำทางไปยังหน้าที่ต้องการ
-  const handleNavigation = (path) => {
-    window.location.href = path;
-  };
-
   return (
-    <div className="bg-[#EBE4F2] min-h-screen flex flex-col">
-      <header className="bg-[#6373B7] py-4 text-white">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="flex items-center">
-            <h1 className="ml-4 text-2xl font-bold">Animalover</h1>
-            <FaDog className="mx-2 size-6"/>
-          </div>
-          <nav className="flex space-x-6">
-            <a href="#" className="hover:underline text-white">Home</a>
-            <a href="#" className="hover:underline text-white">Pet</a>
-            <a href="#" className="hover:underline text-white">Contact Us</a>
-            <a href="#" className="hover:underline text-white">Login</a>
+    <div className="bg-gray-900 min-h-screen text-white flex flex-col">
+      {/* Header Section */}
+      <header className="py-6 bg-gray-900 shadow-md fixed w-full z-10 top-0 left-0">
+        <div className="container mx-auto flex items-center justify-between px-6">
+          <h1 className="text-3xl font-bold text-blue-400 transform hover:scale-105 transition-all duration-300 cursor-pointer">Welcome...</h1>
+          <nav className="space-x-6">
+            {["About", "Experiences", "Projects", "Skills", "Contact"].map((item) => (
+              <Link
+                key={item}
+                to={item.toLowerCase()}  // ใช้ `to` เป็น id ของ section
+                smooth={true}  // เลื่อนอย่างนุ่มนวล
+                duration={500}  // ระยะเวลาในการเลื่อน
+                className="text-gray-300 hover:text-purple-400 transition duration-300 transform hover:scale-105 cursor-pointer"
+              >
+                {item}
+              </Link>
+            ))}
           </nav>
         </div>
       </header>
 
-      <main className="container mx-auto py-12 px-4 md:px-0">
-        <div className="bg-[#6373B7] p-9 rounded-lg shadow-md flex items-center gap-4">
-          <img src={mypic} alt="Welcome" className="w-32 h-32 rounded-full object-cover" />
-          <div>
-            <h2 className="text-white text-2xl font-bold mb-4">ยินดีต้อนรับสู่ Animalover</h2>
-            <p className="text-white">แพลตฟอร์มการดูแลสุขภาพสัตว์เลี้ยงครบวงจร</p>
-            <p className="text-white mt-2">
-              เจ้าของสัตว์เลี้ยงสามารถค้นหาข้อมูลเกี่ยวกับการดูแลสุขภาพสัตว์เลี้ยง
-              เช่น การเลือกอาหารที่เหมาะสม การพาไปตรวจสุขภาพ และการดูแลสุขภาพแบบองค์รวม
+      {/* Main Section */}
+      <main className="container mx-auto py-16 px-6 flex flex-col items-center justify-center min-h-[80vh] pt-24">
+        {/* Profile Card */}
+        <div className="flex flex-col lg:flex-row items-center justify-between p-12 rounded-lg w-full max-w-6xl gap-8 transform hover:scale-105 transition duration-500">
+          <div className="flex flex-col items-start text-center lg:text-left">
+            <h2 className="text-xl font-semibold text-blue-400">HELLO, I'M</h2>
+            <h1 className="text-5xl font-extrabold text-white mt-2">MR. Tharathon Progodkla</h1>
+            <p className="mt-4 text-lg text-gray-300">Interest in Full Stack Development</p>
+            <div className="mt-8 flex space-x-4">
+              <button className="bg-blue-400 text-black px-8 py-3 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform hover:scale-110">
+                Download CV
+              </button>
+              <button className="border border-gray-600 text-black px-8 py-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-110">
+                Contact Info
+              </button>
+            </div>
+          </div>
+          <div className="relative">
+            <img
+              src={mypic1}
+              alt="Profile"
+              className="w-72 h-72 rounded-full object-cover shadow-xl border-4 border-gray-800"
+            />
+            <div className="absolute inset-0 w-72 h-72 rounded-full border-4 border-blue-500 blur-md"></div>
+          </div>
+        </div>
+
+        {/* About Me Section */}
+        <div id="about" className="mt-16 w-full max-w-6xl">
+          <h3 className="text-4xl font-extrabold text-center text-white mb-8">ABOUT ME</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="flex flex-col bg-gray-800 shadow-lg p-8 rounded-lg transform hover:scale-105 transition duration-500">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-blue-400 text-white rounded-full flex items-center justify-center">
+                  🎓
+                </div>
+                <h4 className="ml-4 text-2xl font-bold text-white">Current Education</h4>
+              </div>
+              <p className="text-lg font-bold text-gray-300">Bachelor of Engineer</p>
+              <p className="text-lg font-bold text-gray-300">Computer Engineering, Year 3</p>
+              <p className="text-lg font-bold text-gray-300">King Mongkut's University of Technology Thonburi</p>
+            </div>
+            <div className="flex justify-center items-center">
+              <img
+                src={mypic2}
+                alt="Education"
+                className="w-72 h-72 rounded-full object-cover shadow-xl border-4 border-gray-800"
+              />
+            </div>
+          </div>
+
+          {/* New About Me Box */}
+          <div className="mt-8 bg-gray-800 shadow-lg p-8 rounded-lg transform hover:scale-105 transition duration-500">
+            <h4 className="text-2xl font-bold text-white mb-4">Hello!</h4>
+            <p className="text-lg text-gray-300">
+              Hi, I'm Nuke, a tech enthusiast with a knack for crafting immersive and interactive web experiences. My passion lies at the crossroads of innovation and design, where I transform ideas into engaging digital realities. Whether it’s a sleek user interface or a robust backend, I thrive on bringing creative concepts to life in the ever-evolving web landscape.
             </p>
-          </div>
-        </div>
-
-        <div className="mt-8">
-          <div className="flex items-center mb-4">
-            <h3 className="text-xl font-bold">รายการแนะนำสำหรับคุณ</h3>
-            <IoBookmark className="ml-2 text-2xl" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 cursor-pointer">
-            {/* คลิกที่ div นี้แล้วจะไปหน้า '/mypet' */}
-            <div
-              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
-              onClick={() => handleNavigation("/mypet")} // ต้องเป็น "/mypet"
-            >
-              <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
-              <h4 className="font-semibold mb-4">สัตว์เลี้ยงของฉัน</h4>
-            </div>
-            {/* คลิกที่ div นี้แล้วจะไปหน้า '/add-pet' */}
-            <div
-              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
-              onClick={() => handleNavigation("/Addpet")}
-            >
-              <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
-              <h4 className="font-semibold mb-4">เพิ่มสัตว์เลี้ยง</h4>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 cursor-pointer">
-          <div className="flex items-center mb-4">
-            <h3 className="text-xl font-bold">รายการทั้งหมด</h3>
-            <FaList className="ml-2 size-5"/>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div
-              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
-              
-            >
-              <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
-              <h4 className="font-semibold mb-3 text-center">สัตว์เลี้ยงของฉัน</h4>
-            </div>
-            <div
-              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
-              
-            >
-              <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
-              <h4 className="font-semibold mb-3 text-center">เพิ่มสัตว์เลี้ยง</h4>
-            </div>
-            <div
-              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
-              
-            >
-              <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
-              <h4 className="font-semibold text-center">ข้อมูลสุขภาพของสัตว์เลี้ยง</h4>
-            </div>
-            <div
-              className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center transition-transform duration-300 hover:scale-105"
-              
-            >
-              <img src={mypic} alt="Profile" className="w-64 h-64 rounded-full object-cover mb-4" />
-              <h4 className="font-semibold text-center">คลินิกรักษาสัตว์ใกล้เคียง</h4>
+            <div className="mt-4 flex space-x-4">
+              <span className="bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium">Frontend Development</span>
+              <span className="bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium">Backend Development</span>
+              <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">UI/UX Design</span>
+              <span className="bg-yellow-600 text-white px-4 py-2 rounded-full text-sm font-medium">Web Technologies</span>
             </div>
           </div>
         </div>
