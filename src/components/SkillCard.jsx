@@ -1,6 +1,9 @@
 import React from 'react';
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaBootstrap, FaPython, FaNodeJs, FaPhp, FaDatabase } from 'react-icons/fa';
 import { RiTailwindCssFill } from "react-icons/ri";
+import { FaGitAlt, FaGithub } from 'react-icons/fa';
+import { VscVscode } from "react-icons/vsc";
+import { SiPostman } from "react-icons/si";
 
 const SkillCard = ({ title, level, icon }) => {
   const renderLevelDots = (level) => {
@@ -50,6 +53,13 @@ const SkillsAndExpertise = () => {
     { title: 'SQL', level: 2, icon: <FaDatabase /> },
   ];
 
+  const ToolsTechnology = [
+    { title: 'Git', level: 3, icon: <FaGitAlt /> },
+    { title: 'Postman', level: 2, icon: <SiPostman /> },
+    { title: 'Github', level: 2, icon: <FaGithub /> },
+    { title: 'Vscode', level: 2, icon: <VscVscode /> },
+  ];
+
   return (
     <div className="p-6 bg-gray-900 min-h-screen">
       <h1 className="text-3xl font-bold text-center text-blue-400 mb-6">Skills & Expertise</h1>
@@ -67,6 +77,15 @@ const SkillsAndExpertise = () => {
         <h2 className="text-2xl font-semibold text-white mb-4 px-20">Backend Development</h2>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4 px-20">
           {backendSkills.map((skill) => (
+            <SkillCard key={skill.title} {...skill} />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold text-white mb-4 px-20 mt-6">Tools & Technologies</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4 px-20">
+          {ToolsTechnology.map((skill) => (
             <SkillCard key={skill.title} {...skill} />
           ))}
         </div>

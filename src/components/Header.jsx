@@ -59,10 +59,10 @@ function Header() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="flex flex-col bg-gray-800 shadow-lg p-8 rounded-lg transform hover:scale-105 transition duration-500">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-blue-400 text-white rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-white text-white rounded-full flex items-center justify-center">
                   🎓
                 </div>
-                <h4 className="ml-4 text-2xl font-bold text-white">Current Education</h4>
+                <h4 className="ml-4 text-2xl font-bold text-blue-400">Current Education</h4>
               </div>
               <p className="text-lg font-bold text-gray-300">Bachelor of Engineer</p>
               <p className="text-lg font-bold text-gray-300">Computer Engineering, Year 3</p>
@@ -79,7 +79,7 @@ function Header() {
 
           {/* New About Me Box */}
           <div className="mt-8 bg-gray-800 shadow-lg p-8 rounded-lg transform hover:scale-105 transition duration-500">
-            <h4 className="text-2xl font-bold text-white mb-4">Hello!</h4>
+            <h4 className="text-2xl font-bold text-blue-400 mb-4">Hello!</h4>
             <p className="text-lg text-gray-300">
               Hi, I'm Nuke, a tech enthusiast with a knack for crafting immersive and interactive web experiences. My passion lies at the crossroads of innovation and design, where I transform ideas into engaging digital realities. Whether it’s a sleek user interface or a robust backend, I thrive on bringing creative concepts to life in the ever-evolving web landscape.
             </p>

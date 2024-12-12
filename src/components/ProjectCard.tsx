@@ -1,5 +1,5 @@
 import React from "react";
-import mypic1 from "../imgs/4.jpg";
+import mypic1 from "../imgs/8.png";
 import mypic2 from "../imgs/5.jpg";
 import mypic3 from "../imgs/3.png";
 
@@ -7,28 +7,30 @@ const projects = [
   {
     title: "Website Hotel Management",
     description:
-      "Final project for CS50, developed a web app to share and access COVID-19 information.",
+      "Developed a hotel management web app for CS50, focusing on streamlined operations and accessibility during the COVID-19 pandemic.",
     image: mypic1,
   },
   {
     title: "Robot Arm Axis",
     description:
-      "A web app to help parents review video game content, includes a search function for detailed game info.",
+      "Designed a robotic arm axis control system with web-based functionality, enabling real-time monitoring and management.",
     image: mypic2,
   },
   {
     title: "Web-App Animalover (pet)",
     description:
-      "A web app for university hackathons, led by the Coding and Robotics Club president.",
+      "Developed a web application dedicated to pet care, offering tools and resources to help pet owners manage their pets’ needs effectively.",
     image: mypic3,
   },
+
   {
     title: "Disney Hotstar (Web draft)",
     description:
-      "A web app for university hackathons, led by the Coding and Robotics Club president.",
+      "Developed a draft web application inspired by Disney Hotstar, showcasing streaming features and responsive design for a university project.",
     image: "path/to/hackathon-image.jpg",
   },
 ];
+
 
 const ProjectCard = () => {
   return (
