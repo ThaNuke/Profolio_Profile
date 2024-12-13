@@ -1,23 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import mypic1 from "../imgs/7.jpg";
 import mypic2 from "../imgs/6.jpg";
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="bg-gray-900 min-h-screen text-white flex flex-col">
       {/* Header Section */}
       <header className="py-6 bg-gray-900 shadow-md fixed w-full z-10 top-0 left-0">
         <div className="container mx-auto flex items-center justify-between px-6">
           <h1 className="text-3xl font-bold text-blue-400 transform hover:scale-105 transition-all duration-300 cursor-pointer">Welcome...</h1>
-          <nav className="space-x-6">
+          
+          {/* Hamburger Menu Button */}
+          <button
+            className="lg:hidden text-blue-400 focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+              )}
+            </svg>
+          </button>
+
+          {/* Navigation Menu */}
+          <nav
+            className={`${
+              isMenuOpen ? "block bg-gray-800 p-6 rounded-lg absolute top-16 right-6 w-48 shadow-lg" : "hidden"
+            } lg:flex lg:space-x-6 lg:bg-transparent lg:static lg:p-0 lg:shadow-none space-y-4 lg:space-y-0 mt-4 lg:mt-0 lg:items-center`}
+          >
             {["About", "Experiences", "Projects", "Skills", "Contact"].map((item) => (
               <Link
                 key={item}
-                to={item.toLowerCase()}  // ใช้ `to` เป็น id ของ section
-                smooth={true}  // เลื่อนอย่างนุ่มนวล
-                duration={500}  // ระยะเวลาในการเลื่อน
-                className="text-gray-300 hover:text-purple-400 transition duration-300 transform hover:scale-105 cursor-pointer"
+                to={item.toLowerCase()}
+                smooth={true}
+                duration={500}
+                className="block text-gray-300 hover:text-purple-400 transition duration-300 transform hover:scale-105 cursor-pointer lg:inline-block"
               >
                 {item}
               </Link>
@@ -38,7 +60,7 @@ function Header() {
               <button className="bg-blue-400 text-black px-8 py-3 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform hover:scale-110">
                 Download CV
               </button>
-              <button className="border border-gray-600 text-black px-8 py-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-110">
+              <button className="border border-gray-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-110">
                 Contact Info
               </button>
             </div>

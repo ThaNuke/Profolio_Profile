@@ -96,11 +96,20 @@ const ContactMe = () => {
       </p>
 
       {/* Contact Methods */}
-      <div className="flex flex-cols-2  justify-center -items-center mb-12 gap-4 px-12">
-        {contactMethods.map(({ platform, icon, link }) => (
-          <ContactCard key={platform} platform={platform} icon={icon} link={link} />
-        ))}
-      </div>
+<div className="flex flex-wrap justify-center gap-4 sm:gap-6 px-4 sm:px-8 lg:px-16">
+  {contactMethods.map(({ platform, icon, link }) => (
+    <ContactCard
+      key={platform}
+      platform={platform}
+      icon={icon}
+      link={link}
+      className="flex-1 sm:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(25%-1rem)]"
+    />
+  ))}
+</div>
+
+
+
 
       {/* Contact Form */}
       <ContactForm />
