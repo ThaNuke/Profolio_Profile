@@ -33,7 +33,7 @@ function Header() {
               isMenuOpen ? "block bg-gray-800 p-6 rounded-lg absolute top-16 right-6 w-48 shadow-lg" : "hidden"
             } lg:flex lg:space-x-6 lg:bg-transparent lg:static lg:p-0 lg:shadow-none space-y-4 lg:space-y-0 mt-4 lg:mt-0 lg:items-center`}
           >
-            {["About", "Experiences", "Projects", "Skills", "Contact"].map((item) => (
+            {["About", "Education", "Projects", "Skills", "Contact"].map((item) => (
               <Link
                 key={item}
                 to={item.toLowerCase()}
@@ -49,18 +49,18 @@ function Header() {
       </header>
 
       {/* Main Section */}
-      <main className="container mx-auto py-16 px-6 flex flex-col items-center justify-center min-h-[80vh] pt-24 slide-in-up">
+      <main className="container mx-auto py-6 px-6 flex flex-col items-center justify-center min-h-[80vh] pt-24 slide-in-up">
         {/* Profile Card */}
         <div className="flex flex-col lg:flex-row items-center justify-between p-12 rounded-lg w-full max-w-6xl gap-8 transform hover:scale-105 transition duration-500">
           <div className="flex flex-col items-start text-center lg:text-left">
             <h2 className="text-xl font-semibold text-blue-400">HELLO, I'M</h2>
             <h1 className="text-5xl font-extrabold text-white mt-2">MR. Tharathon Progodkla</h1>
-            <p className="mt-4 text-lg text-gray-300">Interest in Full Stack Development</p>
+            <p className="mt-4 text-lg text-gray-300">Interest in Frontend or Full Stack Development</p>
             <div className="mt-8 flex space-x-4">
               <button className="bg-blue-400 text-black px-8 py-3 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform hover:scale-110">
                 Download CV
               </button>
-              <button className="border border-gray-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-110">
+              <button className="border border-gray-600 text-black px-8 py-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-110">
                 Contact Info
               </button>
             </div>
@@ -77,7 +77,7 @@ function Header() {
 
         {/* About Me Section */}
         <div id="about" className="mt-16 w-full max-w-6xl">
-          <h3 className="text-4xl font-extrabold text-center text-white mb-8">ABOUT ME</h3>
+          <h3 className="text-4xl font-extrabold text-center text-blue-400 mb-8">ABOUT ME</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="flex flex-col bg-gray-800 shadow-lg p-8 rounded-lg transform hover:scale-105 transition duration-500">
               <div className="flex items-center mb-4">
@@ -86,7 +86,7 @@ function Header() {
                 </div>
                 <h4 className="ml-4 text-2xl font-bold text-blue-400">Current Education</h4>
               </div>
-              <p className="text-lg font-bold text-gray-300">Bachelor of Engineer</p>
+              <p className="text-lg font-bold text-gray-300">Bachelor of Engineering</p>
               <p className="text-lg font-bold text-gray-300">Computer Engineering, Year 3</p>
               <p className="text-lg font-bold text-gray-300">King Mongkut's University of Technology Thonburi</p>
             </div>
@@ -94,7 +94,7 @@ function Header() {
               <img
                 src={mypic2}
                 alt="Education"
-                className="w-72 h-72 rounded-full object-cover shadow-xl border-4 border-gray-800"
+                className="w-72 h-72 rounded-full object-cover shadow-xl border-4 border-gray-800 transform hover:scale-105 transition duration-500"
               />
             </div>
           </div>
@@ -105,10 +105,11 @@ function Header() {
             <p className="text-lg text-gray-300">
               Hi, I'm Nuke, a tech enthusiast with a knack for crafting immersive and interactive web experiences. My passion lies at the crossroads of innovation and design, where I transform ideas into engaging digital realities. Whether it’s a sleek user interface or a robust backend, I thrive on bringing creative concepts to life in the ever-evolving web landscape.
             </p>
-            <div className="mt-4 flex space-x-4">
+            <div className="mt-6 flex flex-wrap gap-2">
               <span className="bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium">Frontend Development</span>
               <span className="bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium">Backend Development</span>
-              <span className="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium">UI/UX Design</span>
+              <span className="bg-yellow-700 text-white px-4 py-2 rounded-full text-sm font-medium">UI/UX Design</span>
+              <span className="bg-red-700 text-white px-4 py-2 rounded-full text-sm font-medium">Software</span>
             </div>
           </div>
         </div>

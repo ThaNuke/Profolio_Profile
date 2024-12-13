@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div >
         <Header />
-        <div id="experiences" >
+        <div id="education" >
           <Experiences />
         </div>
         <div id="projects" >

@@ -71,7 +71,7 @@ const ContactForm = () => {
       <div className="flex justify-center mt-6">
         <button
           type="submit"
-          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-3 px-8 rounded-full hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-purple-700 transition-all duration-300"
+          className="bg-gradient-to-r from-blue-500 to-blue-500 text-white font-bold py-3 px-8 rounded-full hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-purple-700 transition-all duration-300"
         >
           Send Message
         </button>
@@ -92,18 +92,18 @@ const ContactMe = () => {
     <div className="p-6 bg-gray-900 min-h-screen">
       <h1 className="text-4xl font-bold text-center text-blue-400 mb-4">Contact Me</h1>
       <p className="text-center text-gray-500 mb-10">
-        Let&apos;s connect and create something amazing together!
+        "Together, let’s craft something truly legendary!"
       </p>
 
       {/* Contact Methods */}
-<div className="flex flex-wrap justify-center gap-4 sm:gap-6 px-4 sm:px-8 lg:px-16">
+<div className="flex flex-wrap justify-center gap-4 sm:gap-6">
   {contactMethods.map(({ platform, icon, link }) => (
     <ContactCard
       key={platform}
       platform={platform}
       icon={icon}
       link={link}
-      className="flex-1 sm:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(25%-1rem)]"
+      className="flex-[0_0_calc(50%-1rem)] sm:flex-[0_0_calc(33.33%-1rem)] lg:flex-[0_0_calc(25%-1rem)]"
     />
   ))}
 </div>
