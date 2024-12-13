@@ -20,7 +20,7 @@ const ContactCard = ({ platform, icon: Icon, link }) => {
 
 const ContactForm = () => {
   return (
-    <form className="w-full max-w-4xl container mx-auto p-8 bg-gray-800 rounded-lg shadow-xl border border-gray-700 mt-12">
+    <form className="w-full max-w-4xl container mx-auto p-8 bg-gray-800 rounded-lg shadow-xl border border-gray-700 mt-12 slide-in-up">
       <h2 className="text-3xl font-bold mb-6 text-center text-blue-400">Send Me a Message</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
@@ -89,7 +89,7 @@ const ContactMe = () => {
   ];
 
   return (
-    <div className="p-6 bg-gray-900 min-h-screen">
+    <div className="p-6 bg-gray-900 min-h-screen slide-in-up">
       <h1 className="text-4xl font-bold text-center text-blue-400 mb-4">Contact Me</h1>
       <p className="text-center text-gray-500 mb-10">
         "Together, let’s craft something truly legendary!"

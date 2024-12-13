@@ -35,7 +35,7 @@ const projects = [
 
 const ProjectCard = () => {
   return (
-    <div className="py-16 px-8 sm:px-16 lg:px-28 bg-gray-900 ">
+    <div className="py-16 px-8 sm:px-16 lg:px-28 bg-gray-900 slide-in-up">
       <h2 className="text-3xl font-extrabold text-center mb-12 text-blue-400">
         Browse My Recent Projects
       </h2>

@@ -84,6 +84,8 @@ button:focus-visible {
 
 /* Utility class */
 .slide-in-up {
-  animation: slideInUp 1.2s ease-out;
+  animation: slideInUp 2.1s ease-out;
 }
+
+
 

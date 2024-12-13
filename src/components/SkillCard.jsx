@@ -61,7 +61,7 @@ const SkillsAndExpertise = () => {
   ];
 
   return (
-    <div className="p-6 bg-gray-900 min-h-screen">
+    <div className="p-6 bg-gray-900 min-h-screen slide-in-up">
   <h1 className="text-3xl font-bold text-center text-blue-400 mb-6">Expertise skill</h1>
 
   <section className="mb-10">

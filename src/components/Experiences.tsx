@@ -6,11 +6,13 @@ const experiences = [
     title: "Bachelor's Degree in Computer Engineering",
     organization: "King Mongkut's University of Technology Thonburi",
     details: [
-      "Specialized in software development and artificial intelligence.",
-      "Completed projects on image recognition and data analysis.",
-      "Participated in coding competitions and won 1st place in Hackathon 2023."
+        "Specialized in web development and software engineering.",
+        "Completed projects on building dynamic web applications and API.",
+        "Gained hands-on experience with front-end frameworks such as React and Angular.",
+        "Developed skills in database design and integration with SQL and NoSQL systems."
     ],
   },
+  
   {
     date: "2016 - 2020",
     title: "High School Science-Math",

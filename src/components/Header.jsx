@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import mypic1 from "../imgs/7.jpg";
 import mypic2 from "../imgs/6.jpg";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [animationClass, setAnimationClass] = useState(""); // เพิ่มสถานะสำหรับคลาส animation
+
+  // เมื่อคอมโพเนนต์ถูกเรนเดอร์ จะทำให้ animation ถูกเพิ่ม
+  useEffect(() => {
+    setAnimationClass("slide-in-up");
+  }, []); // การใช้ [] หมายถึงให้ทำครั้งเดียวเมื่อคอมโพเนนต์ถูกโหลด
 
   return (
     <div className="bg-gray-900 min-h-screen text-white flex flex-col">
@@ -49,9 +55,9 @@ function Header() {
       </header>
 
       {/* Main Section */}
-      <main className="container mx-auto py-6 px-6 flex flex-col items-center justify-center min-h-[80vh] pt-24 slide-in-up">
+      <main className="container mx-auto py-6 px-6 flex flex-col items-center justify-center min-h-[80vh] pt-24">
         {/* Profile Card */}
-        <div className="flex flex-col lg:flex-row items-center justify-between p-12 rounded-lg w-full max-w-6xl gap-8 transform hover:scale-105 transition duration-500">
+        <div className={`flex flex-col lg:flex-row items-center justify-between p-12 rounded-lg w-full max-w-6xl gap-8 transform hover:scale-105 transition duration-500 ${animationClass}`}>
           <div className="flex flex-col items-start text-center lg:text-left">
             <h2 className="text-xl font-semibold text-blue-400">HELLO, I'M</h2>
             <h1 className="text-5xl font-extrabold text-white mt-2">MR. Tharathon Progodkla</h1>
