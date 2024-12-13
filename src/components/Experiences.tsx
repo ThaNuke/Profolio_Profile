@@ -2,32 +2,32 @@ import React from "react";
 
 const experiences = [
   {
-    date: "2021 - 21 MARCH 2022",
-    title: "CODERCAMP - 6 MONTH PROGRAM",
-    organization: "STEM CAREER ACADEMIES",
+    date: "Program",
+    title: "Program",
+    organization: "Program",
     details: [
-      "CS50 Introduction to Computer Science",
+      "Program",
       "Phase 1: Algorithms and Data Structures, Java Programming",
       "Phase 2: Database, Event-Driven Programming, System Analysis and Design",
     ],
   },
   {
-    date: "4 JUNE 2022 - 1 JULY 2022",
-    title: "JUNIOR PROGRAMMER INTERN",
-    organization: "TIPAWAN CORPORATION CO., LTD.",
-    details: ["Used Golang for Website Development"],
+    date: "Program",
+    title: "Program",
+    organization: "Program",
+    details: ["Program"],
   },
   {
-    date: "2024",
-    title: "MAKATHON NEXT GEN",
-    organization: "CP AXTRA MAKRO",
-    details: ["Reached Top 15 Teams in the Ideation Round"],
+    date: "Program",
+    title: "Program",
+    organization: "Program",
+    details: ["Program"],
   },
 ];
 
 function Timeline() {
   return (
-    <div className="bg-gray-900 min-h-screen py-23 flex justify-center items-center">
+    <div className="bg-gray-900 min-h-screen py-23 flex justify-center items-center slide-in-up">
       <div className="container px-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-white">EXPERIENCES</h2>
         <div className="relative">

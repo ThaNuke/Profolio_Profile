@@ -27,7 +27,7 @@ function Header() {
       </header>
 
       {/* Main Section */}
-      <main className="container mx-auto py-16 px-6 flex flex-col items-center justify-center min-h-[80vh] pt-24">
+      <main className="container mx-auto py-16 px-6 flex flex-col items-center justify-center min-h-[80vh] pt-24 slide-in-up">
         {/* Profile Card */}
         <div className="flex flex-col lg:flex-row items-center justify-between p-12 rounded-lg w-full max-w-6xl gap-8 transform hover:scale-105 transition duration-500">
           <div className="flex flex-col items-start text-center lg:text-left">
@@ -86,8 +86,7 @@ function Header() {
             <div className="mt-4 flex space-x-4">
               <span className="bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium">Frontend Development</span>
               <span className="bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium">Backend Development</span>
-              <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">UI/UX Design</span>
-              <span className="bg-yellow-600 text-white px-4 py-2 rounded-full text-sm font-medium">Web Technologies</span>
+              <span className="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium">UI/UX Design</span>
             </div>
           </div>
         </div>
