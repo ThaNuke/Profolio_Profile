@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import { AiOutlineMail } from 'react-icons/ai';
 import { FaGithub, FaInstagram, FaFacebook } from 'react-icons/fa';
 
@@ -19,8 +20,50 @@ const ContactCard = ({ platform, icon: Icon, link }) => {
 };
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // ส่งอีเมลผ่าน EmailJS
+    emailjs
+      .sendForm(
+        'service_l9ru7d9', // รหัส Service ที่คุณสร้างใน EmailJS
+        'template_rvmgxjh', // รหัส Template ที่คุณตั้งค่าใน EmailJS
+        e.target, // ส่งข้อมูลจากฟอร์ม
+        'r2tGEpqq8sf1auCfT' // รหัส User ของคุณใน EmailJS
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus('Message sent successfully!');
+        },
+        (error) => {
+          console.log(error.text);
+          setStatus('An error occurred. Please try again later.');
+        }
+      );
+  };
+
   return (
-    <form className="w-full max-w-4xl container mx-auto p-8 bg-gray-800 rounded-lg shadow-xl border border-gray-700 mt-12 slide-in-up">
+    <form
+      className="w-full max-w-4xl container mx-auto p-8 bg-gray-800 rounded-lg shadow-xl border border-gray-700 mt-12"
+      onSubmit={handleSubmit}
+    >
       <h2 className="text-3xl font-bold mb-6 text-center text-blue-400">Send Me a Message</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
@@ -30,8 +73,11 @@ const ContactForm = () => {
           <input
             className="shadow appearance-none border border-gray-600 rounded w-full py-2 px-3 bg-gray-900 text-gray-300 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500"
             id="name"
+            name="name"
             type="text"
             placeholder="Your name"
+            value={formData.name}
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -41,8 +87,11 @@ const ContactForm = () => {
           <input
             className="shadow appearance-none border border-gray-600 rounded w-full py-2 px-3 bg-gray-900 text-gray-300 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500"
             id="email"
+            name="email"
             type="email"
             placeholder="Your email"
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -53,8 +102,11 @@ const ContactForm = () => {
         <input
           className="shadow appearance-none border border-gray-600 rounded w-full py-2 px-3 bg-gray-900 text-gray-300 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500"
           id="phone"
+          name="phone"
           type="text"
           placeholder="Your phone number"
+          value={formData.phone}
+          onChange={handleChange}
         />
       </div>
       <div className="mt-4">
@@ -64,8 +116,11 @@ const ContactForm = () => {
         <textarea
           className="shadow appearance-none border border-gray-600 rounded w-full py-2 px-3 bg-gray-900 text-gray-300 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500"
           id="message"
+          name="message"
           rows="4"
           placeholder="Your message"
+          value={formData.message}
+          onChange={handleChange}
         ></textarea>
       </div>
       <div className="flex justify-center mt-6">
@@ -76,40 +131,42 @@ const ContactForm = () => {
           Send Message
         </button>
       </div>
+      {status && (
+        <div className="mt-4 text-center text-gray-300">
+          <p>{status}</p>
+        </div>
+      )}
     </form>
   );
 };
 
 const ContactMe = () => {
   const contactMethods = [
-    { platform: 'Email', icon: AiOutlineMail, link: 'mailto:example@gmail.com' },
+    { platform: 'Email', icon: AiOutlineMail, link: 'mailto:zerohero307@gmail.com' },
     { platform: 'GitHub', icon: FaGithub, link: 'https://github.com/ThaNuke' },
     { platform: 'Instagram', icon: FaInstagram, link: 'https://www.instagram.com/tha__nuke/profilecard/?igsh=MTYxMGVuYXJudzI3MQ==' },
     { platform: 'Facebook', icon: FaFacebook, link: 'https://www.facebook.com/tharathon.pragodkla/' },
   ];
 
   return (
-    <div className="p-6 bg-gray-900 min-h-screen slide-in-up">
+    <div className="p-6 bg-gray-900 min-h-screen">
       <h1 className="text-4xl font-bold text-center text-blue-400 mb-4">Contact Me</h1>
       <p className="text-center text-gray-500 mb-10">
         "Together, let’s craft something truly legendary!"
       </p>
 
       {/* Contact Methods */}
-<div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-  {contactMethods.map(({ platform, icon, link }) => (
-    <ContactCard
-      key={platform}
-      platform={platform}
-      icon={icon}
-      link={link}
-      className="flex-[0_0_calc(50%-1rem)] sm:flex-[0_0_calc(33.33%-1rem)] lg:flex-[0_0_calc(25%-1rem)]"
-    />
-  ))}
-</div>
-
-
-
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+        {contactMethods.map(({ platform, icon, link }) => (
+          <ContactCard
+            key={platform}
+            platform={platform}
+            icon={icon}
+            link={link}
+            className="flex-[0_0_calc(50%-1rem)] sm:flex-[0_0_calc(33.33%-1rem)] lg:flex-[0_0_calc(25%-1rem)]"
+          />
+        ))}
+      </div>
 
       {/* Contact Form */}
       <ContactForm />

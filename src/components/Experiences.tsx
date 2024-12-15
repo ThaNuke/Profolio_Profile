@@ -28,7 +28,7 @@ const experiences = [
 
 function Timeline() {
   return (
-    <div className="bg-gray-900 min-h-screen py-16 flex justify-center items-center slide-in-up">
+    <div className="bg-gray-900 min-h-screen py-16 flex justify-center items-center">
       <div className="container px-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-400">EDUCATION</h2>
         <div className="relative">
