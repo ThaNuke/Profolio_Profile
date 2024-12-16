@@ -44,7 +44,7 @@ const ContactForm = () => {
       .sendForm(
         'service_l9ru7d9', // รหัส Service ที่คุณสร้างใน EmailJS
         'template_rvmgxjh', // รหัส Template ที่คุณตั้งค่าใน EmailJS
-        e.target, // ส่งข้อมูลจากฟอร์ม
+        e.target, 
         'r2tGEpqq8sf1auCfT' // รหัส User ของคุณใน EmailJS
       )
       .then(
@@ -150,7 +150,7 @@ const ContactMe = () => {
 
   return (
     <div className="p-6 bg-gray-900 min-h-screen">
-      <h1 className="text-4xl font-bold text-center text-blue-400 mb-4">Contact Me</h1>
+      <h1 className="text-4xl font-bold text-center text-blue-400 mb-4 shimmer-effect">Contact Me</h1>
       <p className="text-center text-gray-500 mb-10">
         "Together, let’s craft something truly legendary!"
       </p>

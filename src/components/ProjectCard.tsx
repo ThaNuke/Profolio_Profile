@@ -10,42 +10,50 @@ const projects = [
     description:
       "Developed Rc-Hotel, a web-based hotel management system, designed to simplify hotel operations, enhance booking management, and improve customer service efficiency.",
     image: mypic1,
+    badge: "Featured",
   },
   {
     title: "Robot Arm Axis Control",
     description:
       "Designed a robotic arm axis control system with web-based functionality, enabling real-time monitoring and management.",
     image: mypic2,
+    badge: "Featured",
   },
   {
     title: "Web-App Animalover (pet)",
     description:
       "Developed a web application dedicated to pet care, offering tools and resources to help pet owners manage their pets’ needs effectively.",
     image: mypic3,
+    badge: "Popular",
   },
 
   {
     title: "Web-TravelWeekend",
     description:
-    "Developed Travel-Web (TravelWeekend), a web application designed to provide travel-related content and streaming features, offering users a seamless and responsive experience.",
+      "Developed Travel-Web (TravelWeekend), a web application designed to provide travel-related content and streaming features, offering users a seamless and responsive experience.",
     image: mypic4,
+    badge: "New",
   },
 ];
-
 
 const ProjectCard = () => {
   return (
     <div className="py-16 px-8 sm:px-16 lg:px-28 bg-gray-900">
-      <h2 className="text-3xl font-extrabold text-center mb-12 text-blue-400">
+      <h2 className="text-3xl font-extrabold text-center mb-12 text-blue-400 shimmer-effect">
         Browse My Recent Projects
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {projects.map((project, index) => (
           <div
             key={index}
             className="bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl overflow-hidden border border-gray-700 group transform hover:scale-105 transition duration-500"
           >
             <div className="relative">
+              {project.badge && (
+                <span className="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-md shadow-lg z-10">
+                  {project.badge}
+                </span>
+              )}
               <img
                 src={project.image}
                 alt={project.title}

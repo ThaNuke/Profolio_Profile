@@ -17,8 +17,8 @@ function Header() {
       {/* Header Section */}
       <header className="py-6 bg-gray-900 shadow-md fixed w-full z-10 top-0 left-0">
         <div className="container mx-auto flex items-center justify-between px-6">
-          <h1 className="text-3xl font-bold text-blue-400 transform hover:scale-105 transition-all duration-300 cursor-pointer">
-            Welcome...
+          <h1 className="text-3xl font-bold text-blue-400 transform hover:scale-105 transition-all duration-300 cursor-pointer animate-glow">
+            Portfolio
           </h1>
           <button
             className="lg:hidden text-blue-400 focus:outline-none"
@@ -52,7 +52,7 @@ function Header() {
               isMenuOpen
                 ? "block bg-gray-800 p-6 rounded-lg absolute top-16 right-6 w-48 shadow-lg"
                 : "hidden"
-            } lg:flex lg:space-x-6 lg:bg-transparent lg:static lg:p-0 lg:shadow-none space-y-4 lg:space-y-0 mt-4 lg:mt-0 lg:items-center`}
+            } lg:flex lg:space-x-6 lg:bg-transparent lg:static lg:p-0 lg:shadow-none space-y-4 lg:space-y-0 mt-4 lg:mt-0 lg:items-center `}
           >
             {["About", "Education", "Projects", "Skills", "Contact"].map(
               (item) => (
@@ -61,7 +61,7 @@ function Header() {
                   to={item.toLowerCase()}
                   smooth={true}
                   duration={500}
-                  className="block text-gray-300 hover:text-purple-400 transition duration-300 transform hover:scale-105 cursor-pointer lg:inline-block"
+                  className="block text-gray-300 hover:text-blue-400 transition duration-300 transform hover:scale-105 cursor-pointer lg:inline-block"
                 >
                   {item}
                 </Link>
@@ -72,13 +72,13 @@ function Header() {
       </header>
 
       {/* Main Section */}
-      <main className="container mx-auto py-6 px-6 flex flex-col items-center justify-center min-h-[80vh] pt-24">
+      <main className="container mx-auto py-6 px-6 flex flex-col items-center justify-center min-h-[80vh] pt-24 slideInSpin">
         <div
           className={`flex flex-col lg:flex-row items-center justify-between p-12 rounded-lg w-full max-w-6xl gap-8 transform hover:scale-105 transition duration-500 ${animationClass}`}
         >
           <div className="flex flex-col items-start text-center lg:text-left">
             <h2 className="text-xl font-semibold text-blue-400">HELLO, I'M</h2>
-            <h1 className="text-5xl font-extrabold text-white mt-2">
+            <h1 className="text-5xl font-extrabold text-white mt-2 ">
               MR. Tharathon Progodkla
             </h1>
             <p className="mt-4 text-lg text-gray-300">
@@ -113,7 +113,7 @@ function Header() {
         </div>
         {/* About Me Section */}
         <div id="about" className="mt-16 w-full max-w-6xl">
-          <h3 className="text-4xl font-extrabold text-center text-blue-400 mb-8">ABOUT ME</h3>
+          <h3 className="text-4xl font-extrabold text-center text-blue-400 mb-8 shimmer-effect">ABOUT ME</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="flex flex-col bg-gray-800 shadow-lg p-8 rounded-lg transform hover:scale-105 transition duration-500">
               <div className="flex items-center mb-4">

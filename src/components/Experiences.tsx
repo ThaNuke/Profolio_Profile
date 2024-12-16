@@ -30,7 +30,10 @@ function Timeline() {
   return (
     <div className="bg-gray-900 min-h-screen py-16 flex justify-center items-center">
       <div className="container px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-blue-400">EDUCATION</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 text-blue-400 shimmer-effect">
+  <span>E</span><span>D</span><span>U</span><span>C</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span>
+</h2>
+
         <div className="relative">
           {/* Timeline Vertical Line */}
           <div className="absolute left-7 top-0 h-full w-2 bg-blue-500"></div>
@@ -42,10 +45,10 @@ function Timeline() {
               className="relative flex items-start mb-16 pl-16 group"
             >
               {/* Timeline Dot */}
-              <div className="absolute left-4 top-2 flex items-center justify-center w-8 h-8 bg-white border-4 border-blue-500 rounded-full transition-transform duration-300 group-hover:scale-110"></div>
+              <div className="absolute left-4 top-2 flex items-center justify-center w-8 h-8 bg-white border-4 border-blue-500 rounded-full transition-transform duration-300 group-hover:scale-110 "></div>
 
               {/* Timeline Content */}
-              <div className="bg-gray-800 shadow-lg rounded-lg p-6 w-full max-w-4xl text-white transition-transform duration-300 transform group-hover:scale-105 group-hover:shadow-2xl">
+              <div className="bg-gray-800 shadow-lg rounded-lg p-6 w-full max-w-4xl text-white transition-transform duration-300 transform group-hover:scale-105 group-hover:shadow-2xl ">
                 <h3 className="text-lg font-bold text-blue-600">{item.date}</h3>
                 <h4 className="text-white text-xl font-bold mt-2">{item.title}</h4>
                 <p className="text-red-400 mt-1">{item.organization}</p>

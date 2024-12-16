@@ -87,5 +87,101 @@ button:focus-visible {
   animation: slideInUp 1.5s ease-out;
 }
 
+@keyframes glowEffect {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0f8cf3;
+  }
+  50% {
+    text-shadow: 0 0 10px #f0edf0, 0 0 20px #1215bd, 0 0 30px #0a50e7;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #134be4;
+  }
+}
+
+.animate-glow {
+  animation: glowEffect 1.5s ease-in-out infinite;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+}
+
+
+@keyframes slideInSpin {
+  0% {
+    transform: translateX(-100%) scale(0.8) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(10%) scale(1.1) rotate(5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.slideInSpin {
+  animation: slideInSpin 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.wave-text span {
+  display: inline-block;
+  font-size: 2rem;
+  color: #2980b9;
+  animation: wave 1s ease-in-out infinite;
+}
+.wave-text span:nth-child(1) { animation-delay: 0s; }
+.wave-text span:nth-child(2) { animation-delay: 0.1s; }
+.wave-text span:nth-child(3) { animation-delay: 0.2s; }
+/* เพิ่ม delay ตามตัวอักษร */
+
+
+.shimmer-effect {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(90deg, #ffffff 0%, #00c6ff 50%, #ffffff 100%);
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+
+.hover-effect {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hover-effect:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
 
 
