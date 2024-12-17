@@ -50,9 +50,9 @@ function Header() {
           <nav
             className={`${
               isMenuOpen
-                ? "block bg-gray-800 p-6 rounded-lg absolute top-16 right-6 w-48 shadow-lg"
+                ? "block bg-gray-800 p-6 rounded-lg absolute top-16 right-6 w-48 shadow-lg rotate-gradient"
                 : "hidden"
-            } lg:flex lg:space-x-6 lg:bg-transparent lg:static lg:p-0 lg:shadow-none space-y-4 lg:space-y-0 mt-4 lg:mt-0 lg:items-center `}
+            } lg:flex lg:space-x-6 lg:bg-transparent lg:static lg:p-0 lg:shadow-none space-y-4 lg:space-y-0 mt-4 lg:mt-0 lg:items-center`}
           >
             {["About", "Education", "Projects", "Skills", "Contact"].map(
               (item) => (
@@ -61,7 +61,7 @@ function Header() {
                   to={item.toLowerCase()}
                   smooth={true}
                   duration={500}
-                  className="block text-gray-300 hover:text-blue-400 transition duration-300 transform hover:scale-105 cursor-pointer lg:inline-block"
+                  className="block text-gray-300 hover:text-blue-400 transition duration-300 transform hover:scale-105 cursor-pointer lg:inline-block "
                 >
                   {item}
                 </Link>
@@ -106,9 +106,9 @@ function Header() {
             <img
               src={mypic1}
               alt="Profile"
-              className="w-72 h-72 rounded-full object-cover shadow-xl border-4 border-gray-800"
+              className="w-80 h-80 rounded-full object-cover shadow-xl border-4 border-gray-800"
             />
-            <div className="absolute inset-0 w-72 h-72 rounded-full border-4 border-blue-500 blur-md"></div>
+            <div className="absolute inset-0 w-80 h-80 rounded-full border-4 border-blue-500 blur-md"></div>
           </div>
         </div>
         {/* About Me Section */}
@@ -154,22 +154,22 @@ function Header() {
       {/* Modal Section */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg w-96 text-center">
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">
+          <div className="rotate-gradient p-8 rounded-lg shadow-lg w-96 text-center">
+            <h2 className="text-2xl font-bold mb-4 text-white-800">
               Contact Info
             </h2>
-            <p className="text-gray-600">
+            <p className="text-white-600">
               📧 Email:{" "}
               <a
                 href="mailto:your-email@example.com"
-                className="text-blue-500"
+                className="text-red-500"
               >
                 zerohero307@gmail.com
               </a>
             </p>
-            <p className="text-gray-600 mt-2">
+            <p className="text-white-600 mt-2">
               📞 Phone:{" "}
-              <a href="tel:+6625073004" className="text-blue-500">
+              <a href="tel:+6625073004" className="text-red-500">
                 +6625073004
               </a>
             </p>
