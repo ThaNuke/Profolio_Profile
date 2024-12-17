@@ -106,9 +106,9 @@ function Header() {
             <img
               src={mypic1}
               alt="Profile"
-              className="w-80 h-80 rounded-full object-cover shadow-xl border-4 border-gray-800"
+              className="w-72 h-72 rounded-full object-cover shadow-xl border-4 border-gray-800"
             />
-            <div className="absolute inset-0 w-80 h-80 rounded-full border-4 border-blue-500 blur-md"></div>
+            <div className="absolute inset-0 w-72 h-72 rounded-full border-4 border-blue-500 blur-md"></div>
           </div>
         </div>
         {/* About Me Section */}

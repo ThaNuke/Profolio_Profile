@@ -147,7 +147,7 @@ body {
 }
 
 .tilt-effect:hover {
-  transform: rotateX(5deg) rotateY(10deg);
+  transform: rotateX(10deg) rotateY(10deg);
 }
 
 
