@@ -45,7 +45,7 @@ function Timeline() {
               className="relative flex items-start mb-16 pl-16 group"
             >
               {/* Timeline Dot */}
-              <div className="absolute left-4 top-2 flex items-center justify-center w-8 h-8 bg-white border-4 border-blue-500 rounded-full transition-transform duration-300 group-hover:scale-110 "></div>
+              <div className="absolute left-4 top-2 flex items-center justify-center w-8 h-8 bg-white border-4 border-blue-500 rounded-full"></div>
 
               {/* Timeline Content */}
               <div className="bg-gray-800 shadow-lg rounded-lg p-6 w-full max-w-4xl text-white transition-transform duration-300 transform group-hover:scale-105 group-hover:shadow-2xl ">

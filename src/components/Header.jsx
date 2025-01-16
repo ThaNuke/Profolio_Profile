@@ -78,7 +78,7 @@ function Header() {
         >
           <div className="flex flex-col items-start text-center lg:text-left">
             <h2 className="text-xl font-semibold text-blue-400">HELLO, I'M</h2>
-            <h1 className="text-5xl font-extrabold text-white mt-2 ">
+            <h1 className="text-5xl font-extrabold text-white mt-2 PixelFont">
               MR. Tharathon Progodkla
             </h1>
             <p className="mt-4 text-lg text-gray-300">
@@ -87,8 +87,8 @@ function Header() {
             <div className="mt-8 flex space-x-4">
               <button className="bg-blue-400 text-black px-8 py-3 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform hover:scale-110">
                 <a
-                  href={`${window.location.origin}/Tharathon_Pragodkla_CV.pdf`}
-                  download="Tharathon_Pragodkla_CV.pdf"
+                  href={`${window.location.origin}/CV.pdf`}
+                  download="CV.pdf"
                   className="text-black no-underline"
                 >
                   Download CV
